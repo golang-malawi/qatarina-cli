@@ -49,7 +49,7 @@ var createEnvironmentCmd = &cobra.Command{
 		if err != nil {
 			return fmt.Errorf("failed to read response body: %w", err)
 		}
-		if resp.StatusCode != 201 || resp.StatusCode != 200 {
+		if resp.StatusCode != 201 && resp.StatusCode != 200 {
 			return fmt.Errorf("API error: %s", string(bodyBytes))
 		}
 
